@@ -8,12 +8,28 @@ function renderAnalytics(){
   }
 
   // ── Core metrics ────────────────────────────────────────────────────────────
-  // FIX: durationH now reads from style.height (not offsetHeight) so it is
-  //      correct even when the home view is hidden. See blocks.js getBlocks().
-  const totalH=blocks.reduce((s,b)=>s+b.durationH,0);
+  // Interval-merging for Free Time
+  let intervals = blocks.map(b => [b.startH || 0, (b.startH || 0) + b.durationH]).sort((a,b) => a[0] - b[0]);
+  let merged = [];
+  if (intervals.length > 0) {
+      let cur = intervals[0];
+      for (let i=1; i<intervals.length; i++) {
+          if (intervals[i][0] <= cur[1]) {
+              cur[1] = Math.max(cur[1], intervals[i][1]);
+          } else {
+              merged.push(cur);
+              cur = intervals[i];
+          }
+      }
+      merged.push(cur);
+  }
+  let usedWallClockTime = merged.reduce((s, inv) => s + (inv[1] - inv[0]), 0);
+  const freeH = Math.max(0, 24 - usedWallClockTime);
+
+  // Core metrics
+  const totalH=blocks.reduce((s,b)=>s+b.durationH,0); // keeping for schedule density display
   const doneCount=blocks.filter(b=>b.done).length;
   const completedH=blocks.filter(b=>b.done).reduce((s,b)=>s+b.durationH,0);
-  const freeH=Math.max(0,24-totalH);
 
   // FIX: Productivity = completed hours / total scheduled hours × 100.
   //      Old formula (totalH/16×100) measured schedule density, not completion.
@@ -40,14 +56,12 @@ function renderAnalytics(){
   const anGrid=document.createElement('div');anGrid.className='an-grid';
 
   // ── Pie chart — by category ─────────────────────────────────────────────────
-  // FIX: categories now accumulate correctly because durationH is non-zero.
   const catMap={};
   blocks.forEach(b=>{
     if (b.catId && b.catId.length) {
-      const splitDur = b.durationH / b.catId.length;
       b.catId.forEach(id => {
         if(!catMap[id]) catMap[id] = {catId: id, hours: 0, cat: CAT_MAP[id]};
-        catMap[id].hours += splitDur;
+        catMap[id].hours += b.durationH; // Bug Fix: Give full time to each category
       });
     } else {
       if(!catMap['__none']) catMap['__none'] = {catId: '__none', hours: 0, cat: null};
@@ -56,7 +70,9 @@ function renderAnalytics(){
   });
   if(freeH>0)catMap['__free']={catId:'__free',hours:freeH,cat:{name:'Free',color:'#374151',emoji:'🕐'}};
   const slices=Object.values(catMap).sort((a,b)=>b.hours-a.hours);
-  const totalAll=slices.reduce((s,x)=>s+x.hours,0);
+  // Denominator logic to dynamically scale slices
+  const totalCategoryHours = slices.reduce((s,x) => s + x.hours, 0);
+  const dynamicTotal = Math.max(24, totalCategoryHours);
 
   const pieCard=document.createElement('div');pieCard.className='an-card';
   pieCard.innerHTML=`<div class="an-card-title">Time by Category</div><div class="an-card-sub">Today's time distribution</div>`;
@@ -75,7 +91,7 @@ function renderAnalytics(){
 
   const legend=document.createElement('div');legend.className='pie-legend';
   slices.forEach(s=>{
-    const pct=(s.hours/24*100).toFixed(0);const col=(s.cat?.color)||'#6B7280';
+    const pct=(s.hours/dynamicTotal*100).toFixed(0);const col=(s.cat?.color)||'#6B7280';
     const nm=s.cat?`${s.cat.emoji||''} ${s.cat.name}`:'Uncategorised';
     legend.innerHTML+=`<div class="pie-legend-item"><div class="pie-legend-dot" style="background:${col}"></div><span style="flex:1">${nm}</span><span style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted)">${pct}%</span></div>`;
   });
@@ -100,7 +116,7 @@ function renderAnalytics(){
 
     let a=-Math.PI/2;
     slices.forEach(s=>{
-      const sw=s.hours/24*Math.PI*2;const col=(s.cat?.color)||'#6B7280';
+      const sw=s.hours/dynamicTotal*Math.PI*2;const col=(s.cat?.color)||'#6B7280';
       ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,r,a,a+sw);ctx.closePath();
       ctx.fillStyle=col;ctx.fill();
       ctx.strokeStyle=document.documentElement.getAttribute('data-theme')==='dark'?'#0D0D14':'#F4F3FF';
@@ -161,6 +177,21 @@ function renderAnalytics(){
       name: "High-Performing Student",
       reality: "less distraction, more study + structured time",
       profile: { sleep: 30, school: 25, study: 15, exercise: 5, eat: 5, transport: 4, personal: 4, family: 3, hobbies: 3, chores: 2, social: 2, entertain: 1.5, hangout: 1.5, compete: 1.5, work: 0 }
+    },
+    {
+      name: "Working Professional",
+      reality: "heavy work hours, lower study/school",
+      profile: { sleep: 30, work: 35, commute: 5, eat: 6, chores: 4, family: 5, entertain: 5, exercise: 4, personal: 3, social: 3, school: 0, study: 0, hangout: 0, hobbies: 0, compete: 0 }
+    },
+    {
+      name: "Night Owl / Shift Worker",
+      reality: "unconventional sleep schedule, skewed daytime activities",
+      profile: { sleep: 30, work: 35, entertain: 10, eat: 6, personal: 4, chores: 5, social: 4, hangout: 3, exercise: 2, family: 1, hobbies: 0, school: 0, study: 0, compete: 0, transport: 0 }
+    },
+    {
+      name: "Entrepreneur / Hustler",
+      reality: "work dominates, heavily skewed schedule",
+      profile: { work: 45, sleep: 25, study: 10, eat: 5, personal: 3, exercise: 3, entertain: 2, social: 2, family: 2, chores: 2, transport: 1, hobbies: 0, school: 0, hangout: 0, compete: 0 }
     },
     {
       name: "Athlete-Focused Person",

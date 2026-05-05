@@ -269,23 +269,28 @@ function showBgModal() {
 }
 
 function setBg(type, url) {
-  const viewHome = document.getElementById('view-home');
-  if (!viewHome) return;
+  const appContainer = document.body;
+  if (!appContainer) return;
+
+  // Clear previous inline styles on body related to background
+  appContainer.style.backgroundImage = "";
+  appContainer.style.backgroundColor = "";
+  appContainer.style.backgroundSize = "cover";
+  appContainer.style.backgroundPosition = "center";
+  appContainer.style.backgroundAttachment = "fixed";
+
   if(type === 'default') {
-    viewHome.style.backgroundImage = "url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3')";
-    viewHome.style.backgroundColor = "";
+    appContainer.style.backgroundImage = "url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3')";
     localStorage.setItem('tf_bg', 'default');
   } else if (type === 'dark') {
-    viewHome.style.backgroundImage = "none";
-    viewHome.style.backgroundColor = "#111";
+    appContainer.style.backgroundColor = "#111";
     localStorage.setItem('tf_bg', 'dark');
   } else if (type === 'bright') {
-    viewHome.style.backgroundImage = "none";
-    viewHome.style.backgroundColor = "#f5f5f5";
+    appContainer.style.backgroundColor = "#f5f5f5";
     localStorage.setItem('tf_bg', 'bright');
   } else if (type === 'custom') {
-    viewHome.style.backgroundImage = `url('${url}')`;
-    viewHome.style.backgroundColor = "";
+    // Add dimming overlay for readability on custom images
+    appContainer.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${url}')`;
     localStorage.setItem('tf_bg', url);
   }
 }

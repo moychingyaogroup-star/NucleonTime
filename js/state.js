@@ -225,10 +225,18 @@ function showCharUnlock(ch){
 }
 
 function checkDayStreak(){
-  const ts=fmtDate(new Date());let s=getStreak();
+  // 4:00 AM daily reset logic
+  const now = new Date();
+  const adjustedDate = new Date(now);
+  if (now.getHours() < 4) {
+    adjustedDate.setDate(adjustedDate.getDate() - 1);
+  }
+  const ts = fmtDate(adjustedDate);
+  let s=getStreak();
   if(s.lastDate===ts)return;
   const prev=s.count;
-  const yest=new Date();yest.setDate(yest.getDate()-1);
+  const yest=new Date(adjustedDate);
+  yest.setDate(yest.getDate()-1);
   if(s.lastDate===fmtDate(yest)){
     s.count+=1;if(s.count===5||s.count===10){s.shields=(s.shields||0)+1;showToast('🛡️ Streak Shield earned!');addNotif('🛡️','You earned a Streak Shield!')}
   } else if(s.lastDate){

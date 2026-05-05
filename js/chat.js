@@ -9,6 +9,7 @@ function _chatId(uid1, uid2) { return [uid1, uid2].sort().join('_'); }
 
 // ── Active chat listener cleanup ─────────────────────────────────────────────
 let _chatUnsub = null;
+let _friendReqUnsub = null;
 
 // ── In-memory friends cache (populated from Firestore on renderFriends) ──────
 let _friendsCache = [];
@@ -326,6 +327,21 @@ function acceptFriendRequestFromPayload(payload) {
     console.error('Bad friend request payload:', e);
     showToast('Could not open request');
   }
+}
+
+function initFriendRequestListener() {
+  if (!_uid() || !_fdb() || _friendReqUnsub) return;
+  _friendReqUnsub = _fdb().collection('users').doc(_uid()).collection('friend_requests')
+    .onSnapshot(snap => {
+      let count = 0;
+      snap.forEach(doc => { count++; });
+      const badge = document.getElementById('topbar-notif-count');
+      if (badge) {
+        badge.textContent = count > 9 ? '9+' : count;
+        badge.style.display = count > 0 ? 'flex' : 'none';
+      }
+      renderFriendRequests();
+    }, err => console.warn('Friend request listener error', err));
 }
 
 async function renderFriendRequests() {

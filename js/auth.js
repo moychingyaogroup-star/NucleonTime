@@ -106,6 +106,7 @@ _auth.onAuthStateChanged(async function(user) {
     appEl.style.display = '';
     _updateSidebarUser(user, window.TF_PROFILE);
     if (typeof init === 'function') init();
+    if (typeof initFriendRequestListener === 'function') initFriendRequestListener();
   } else {
     window.TF_USER = window.TF_PROFILE = null;
     loginScreen.style.display = 'flex';

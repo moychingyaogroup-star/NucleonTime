@@ -85,9 +85,10 @@ function hasOverlap(y,h,ex=null){
 }
 function findFreeSlot(y,h,ex=null){
   let sy=snapY(y);
-  if (sy + h > 24 * ROW_H) sy = (24 * ROW_H) - h;
+  // Allow spill over 24h by removing strict constraint
+  // if (sy + h > 24 * ROW_H) sy = (24 * ROW_H) - h;
   if(!hasOverlap(sy,h,ex))return sy;
-  let d=sy; while(d+h<=24*ROW_H){d+=ROW_H;if(!hasOverlap(d,h,ex))return d;}
+  let d=sy; while(d+h<=48*ROW_H){d+=ROW_H;if(!hasOverlap(d,h,ex))return d;} // Allow checking past 24h
   let u=sy; while(u>=0){if(!hasOverlap(u,h,ex))return u;u-=ROW_H;}
   return sy;
 }
@@ -302,11 +303,24 @@ function applyBlockCat(block,catId){
     }
   }
 
+  // Get the primary category color to inherit
+  let newColor = BLOCK_COLORS.find(c => c.hex === block.dataset.hex) || BLOCK_COLORS[0];
+  if (currentCats.length > 0 && CAT_MAP[currentCats[0]]) {
+    const catColorHex = CAT_MAP[currentCats[0]].color;
+    // Find closest BLOCK_COLORS match, or just use the first if no exact match (though CAT_MAP colors usually match)
+    const matchedColor = BLOCK_COLORS.find(c => c.hex === catColorHex);
+    if (matchedColor) {
+        newColor = matchedColor;
+    } else {
+        newColor = { hex: catColorHex, fg: '#FFFFFF', name: CAT_MAP[currentCats[0]].name };
+    }
+  }
+
   const bData = {
     x: parseFloat(block.style.left) || 0,
     y: parseFloat(block.style.top) || 0,
     text: (block.querySelector('.block-text')||{}).innerHTML||'',
-    color: BLOCK_COLORS.find(c => c.hex === block.dataset.hex) || BLOCK_COLORS[0],
+    color: newColor,
     catId: currentCats,
     w: parseFloat(block.style.width) || 210,
     h: parseFloat(block.style.height) || block.offsetHeight,
@@ -379,18 +393,25 @@ function resizeBlockW(e,block){
 }
 
 function bindBlockTouchInteractions(block,txt,rb,rr,mobExt){
-  let start=null, mode=null, pressTimer=null, resizeStartH=0;
-  const clearPress=()=>{if(pressTimer){clearTimeout(pressTimer);pressTimer=null;}};
+  let start=null, mode=null, pressTimer=null, resizeStartH=0, dragTimer=null;
+  const clearPress=()=>{if(pressTimer){clearTimeout(pressTimer);pressTimer=null;}; if(dragTimer){clearTimeout(dragTimer);dragTimer=null;}};
   block.addEventListener('touchstart',e=>{
     if([rb,rr,mobExt].some(el=>e.target===el)||e.target.closest('.block-text,.block-check,.block-menu-btn,.block-media-layer'))return;
     const pt=getEventPoint(e); start={x:pt.clientX,y:pt.clientY,left:parseFloat(block.style.left)||0,top:parseFloat(block.style.top)||0};
     selectBlock(block); mode='pending';
-    pressTimer=setTimeout(()=>{mode='resize-touch';resizeStartH=block.offsetHeight;block.classList.add('resizing-touch');navigator.vibrate&&navigator.vibrate(12);},450);
+
+    // Add 200ms delay for dragging, to prevent accidental drags while scrolling
+    dragTimer=setTimeout(()=>{if(mode==='pending'){mode='drag';block.classList.add('dragging');beep('drag');navigator.vibrate&&navigator.vibrate(12);}},200);
+    pressTimer=setTimeout(()=>{if(mode==='drag' || mode==='pending'){mode='resize-touch';resizeStartH=block.offsetHeight;block.classList.remove('dragging');block.classList.add('resizing-touch');navigator.vibrate&&navigator.vibrate(12);}},450);
   },{passive:true});
   block.addEventListener('touchmove',e=>{
     if(!start)return; const pt=getEventPoint(e); const dx=pt.clientX-start.x,dy=pt.clientY-start.y;
     if(Math.abs(dx)>8||Math.abs(dy)>8)clearPress();
-    if(mode==='pending')mode=Math.abs(dx)>Math.abs(dy)+18?'swipe':'drag';
+
+    if(mode==='pending' && (Math.abs(dx)>8||Math.abs(dy)>8)) {
+        if (Math.abs(dx)>Math.abs(dy)+18) mode='swipe';
+        else mode='scroll'; // Browser handles scrolling
+    }
     if(mode==='swipe'){e.preventDefault();block.style.transform=`translateX(${dx}px)`;block.style.opacity=Math.max(.2,1-Math.abs(dx)/160);}
     else if(mode==='resize-touch'){e.preventDefault();const newH=Math.max(ROW_H-6,resizeStartH+dy);block.style.height=(Math.max(1,Math.round(newH/ROW_H))*ROW_H-6)+'px';}
     else if(mode==='drag'){e.preventDefault();block.style.left=Math.max(0,start.left+dx)+'px';block.style.top=Math.max(0,start.top+dy)+'px';}
@@ -399,7 +420,8 @@ function bindBlockTouchInteractions(block,txt,rb,rr,mobExt){
     if(!start)return; clearPress(); const pt=getEventPoint(e); const dx=pt.clientX-start.x;
     if(mode==='swipe'&&Math.abs(dx)>110){beep('delete');if(selectedBlock===block)selectedBlock=null;block.remove();saveWS();showToast('Block deleted');}
     else if(mode==='resize-touch'){block.classList.remove('resizing-touch');block.style.height=(Math.max(1,Math.round(block.offsetHeight/ROW_H))*ROW_H-6)+'px';block.style.top=findFreeSlot(parseFloat(block.style.top)||0,block.offsetHeight,block)+'px';saveWS();}
-    else if(mode==='drag'){block.style.top=findFreeSlot(parseFloat(block.style.top)||0,block.offsetHeight,block)+'px';saveWS();}
+    else if(mode==='drag'){block.classList.remove('dragging');block.style.top=findFreeSlot(parseFloat(block.style.top)||0,block.offsetHeight,block)+'px';saveWS();}
+    block.classList.remove('dragging');
     block.style.transform='';block.style.opacity='';start=null;mode=null;
   });
 }
