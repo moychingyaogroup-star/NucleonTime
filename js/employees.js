@@ -18,11 +18,46 @@ function renderEmployees() {
     // Calculations
     let ytdCost = 0;
     let mtdCost = 0;
-    let activeEmployees = emps.length;
+    let activeEmployees = 0;
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const startOfYear = new Date(today.getFullYear(), 0, 1);
 
     emps.forEach(emp => {
-        ytdCost += calculateCost(emp, 'YTD');
-        mtdCost += calculateCost(emp, 'MTD');
+        let hasResigned = false;
+        let resignationDate = null;
+        if (emp.resignationDate) {
+            const [y, m, d] = emp.resignationDate.split('-');
+            resignationDate = new Date(y, m - 1, d);
+            if (resignationDate <= today) {
+                hasResigned = true;
+            }
+        }
+
+        if (!hasResigned) {
+            activeEmployees++;
+
+            if (emp.payType === 'Salary') {
+                mtdCost += Number(emp.payRate) / 12;
+                ytdCost += Number(emp.payRate);
+            } else if (emp.payType === 'Hourly') {
+                mtdCost += (Number(emp.payRate) * 8 * 260) / 12;
+                ytdCost += Number(emp.payRate) * 8 * 260;
+            }
+        } else {
+            // Calculate proportional yearly cost for resigned employees
+            if (resignationDate < startOfYear) {
+                // Cost is 0 for this year
+            } else {
+                let wd = getWorkingDays(startOfYear, resignationDate);
+                if (emp.payType === 'Salary') {
+                    ytdCost += Number(emp.payRate) * (wd / 260);
+                } else if (emp.payType === 'Hourly') {
+                    ytdCost += Number(emp.payRate) * 8 * wd;
+                }
+            }
+        }
     });
 
     let html = `
@@ -42,11 +77,11 @@ function renderEmployees() {
         <div style="display:flex; gap:15px; margin-bottom:20px;">
             <div class="card-base" style="flex:1; padding:20px; text-align:center;">
                 <div style="font-size:24px; font-weight:bold; color:var(--accent);">$${ytdCost.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</div>
-                <div style="color:var(--muted); font-size:12px; margin-top:5px;">Total YTD Cost</div>
+                <div style="color:var(--muted); font-size:12px; margin-top:5px;">Total Yearly Cost</div>
             </div>
             <div class="card-base" style="flex:1; padding:20px; text-align:center;">
                 <div style="font-size:24px; font-weight:bold; color:var(--accent);">$${mtdCost.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</div>
-                <div style="color:var(--muted); font-size:12px; margin-top:5px;">Total MTD Cost</div>
+                <div style="color:var(--muted); font-size:12px; margin-top:5px;">Total Monthly Cost</div>
             </div>
             <div class="card-base" style="flex:1; padding:20px; text-align:center;">
                 <div style="font-size:24px; font-weight:bold; color:var(--text);">${activeEmployees}</div>
@@ -64,6 +99,7 @@ function renderEmployees() {
                         <th style="padding:10px;">Hours Work (${currentEmpFilter})</th>
                         <th style="padding:10px;">Leave (${currentEmpFilter})</th>
                         <th style="padding:10px;">Cost (${currentEmpFilter})</th>
+                        <th style="padding:10px;">Resignation Date</th>
                         <th style="padding:10px;">Actions</th>
                     </tr>
                 </thead>
@@ -71,7 +107,7 @@ function renderEmployees() {
     `;
 
     if (emps.length === 0) {
-        html += `<tr><td colspan="7" style="padding:20px; text-align:center; color:var(--muted);">No employees added yet.</td></tr>`;
+        html += `<tr><td colspan="8" style="padding:20px; text-align:center; color:var(--muted);">No employees added yet.</td></tr>`;
     } else {
         emps.forEach((emp, index) => {
             const cost = calculateCost(emp, currentEmpFilter);
@@ -80,14 +116,17 @@ function renderEmployees() {
             const isHourly = emp.payType === 'Hourly';
             const inputAttr = isHourly ? '' : 'disabled title="Salary costs are fixed" style="opacity: 0.5"';
 
+            const displayHours = (currentEmpFilter === 'Today' && (!emp.hours[currentEmpFilter] || emp.hours[currentEmpFilter] === 0)) ? '-' : (emp.hours[currentEmpFilter] || 0);
+
             html += `
                 <tr style="border-bottom:1px solid var(--border);">
                     <td style="padding:10px;">${escHtml(emp.name)}</td>
                     <td style="padding:10px;">${escHtml(emp.payType)}</td>
                     <td style="padding:10px;">$${emp.payRate}${isHourly ? '/hr' : '/yr'}</td>
-                    <td style="padding:10px;"><input type="number" class="tf-input" style="width:60px;" value="${emp.hours[currentEmpFilter] || 0}" onblur="updateEmpHours(${index}, '${currentEmpFilter}', 'worked', this.value)" ${inputAttr}/></td>
+                    <td style="padding:10px;"><input type="text" class="tf-input" style="width:60px;" value="${displayHours}" onblur="updateEmpHours(${index}, '${currentEmpFilter}', 'worked', this.value)" ${inputAttr}/></td>
                     <td style="padding:10px;"><input type="number" class="tf-input" style="width:60px;" value="${emp.leave[currentEmpFilter] || 0}" onblur="updateEmpHours(${index}, '${currentEmpFilter}', 'leave', this.value)" ${inputAttr}/></td>
                     <td style="padding:10px; font-weight:bold;">$${cost.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</td>
+                    <td style="padding:10px;"><input type="date" class="tf-input" value="${emp.resignationDate || ''}" onchange="updateEmpResignation(${index}, this.value)" /></td>
                     <td style="padding:10px;"><button onclick="deleteEmpFinance(${index})" style="background:none; border:none; cursor:pointer; color:#EF4444; font-size:16px;">🗑</button></td>
                 </tr>
             `;
@@ -109,6 +148,16 @@ function setEmpFilter(val) {
 }
 
 function calculateCost(emp, period) {
+    if (period === 'Today' && emp.resignationDate) {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const [y, m, d] = emp.resignationDate.split('-');
+        const resignationDate = new Date(y, m - 1, d);
+        if (resignationDate <= today) {
+            return 0;
+        }
+    }
+
     let cost = 0;
     const hours = Number(emp.hours[period]) || 0;
     const leave = Number(emp.leave[period]) || 0;
@@ -128,13 +177,19 @@ function calculateCost(emp, period) {
 
 function updateEmpHours(index, period, type, val) {
     const emps = getEmployees();
+
+    // Check for dash
+    if (typeof val === 'string' && val.trim() === '-') {
+        val = 0;
+    }
+
     const numVal = parseFloat(val);
-    const finalVal = isNaN(numVal) ? 0 : numVal;
+    let finalVal = isNaN(numVal) ? 0 : numVal;
 
     if (type === 'worked') {
         emps[index].hours[period] = finalVal;
     } else {
-        emps[index].leave[period] = finalVal;
+        emps[index].leave[period] = Math.max(0, finalVal);
     }
     saveEmployees(emps);
     renderEmployees();
@@ -183,4 +238,22 @@ function deleteEmpFinance(index) {
         saveEmployees(emps);
         renderEmployees();
     }
+}
+
+function updateEmpResignation(index, val) {
+    const emps = getEmployees();
+    emps[index].resignationDate = val;
+    saveEmployees(emps);
+    renderEmployees();
+}
+
+function getWorkingDays(startDate, endDate) {
+    let count = 0;
+    let curDate = new Date(startDate);
+    while (curDate <= endDate) {
+        const dayOfWeek = curDate.getDay();
+        if (dayOfWeek !== 0 && dayOfWeek !== 6) count++;
+        curDate.setDate(curDate.getDate() + 1);
+    }
+    return count;
 }
