@@ -262,7 +262,10 @@ function showBgModal() {
       <button onclick="setBg('dark')" class="modal-btn" style="background:#111;color:#fff;border:1px solid var(--border);">Simple Dark</button>
       <button onclick="setBg('bright')" class="modal-btn" style="background:#f5f5f5;color:#111;border:1px solid var(--border);">Simple Bright</button>
       <div style="margin-top:10px; font-size:12px; color:var(--muted);">Upload Custom Photo:</div>
-      <input type="file" id="bg-upload-input" accept="image/*" style="font-size:12px; color:var(--text);" onchange="handleBgUpload(event)">
+      <label class="tf-btn tf-btn-secondary" style="text-align:center; cursor:pointer;">
+        Choose File
+        <input type="file" id="bg-upload-input" accept="image/*" style="display:none;" onchange="handleBgUpload(event)">
+      </label>
     </div>
   `;
   showModal({title:'Customize Background', body, btn:'Close', onConfirm:()=>true});
@@ -282,12 +285,15 @@ function setBg(type, url) {
   if(type === 'default') {
     appContainer.style.backgroundImage = "url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3')";
     localStorage.setItem('tf_bg', 'default');
+    document.documentElement.dataset.theme = 'dark';
   } else if (type === 'dark') {
     appContainer.style.backgroundColor = "#111";
     localStorage.setItem('tf_bg', 'dark');
+    document.documentElement.dataset.theme = 'dark';
   } else if (type === 'bright') {
     appContainer.style.backgroundColor = "#f5f5f5";
     localStorage.setItem('tf_bg', 'bright');
+    document.documentElement.dataset.theme = 'light';
   } else if (type === 'custom') {
     // Add dimming overlay for readability on custom images
     appContainer.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${url}')`;

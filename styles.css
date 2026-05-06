@@ -1810,15 +1810,6 @@ a{color:inherit;text-decoration:none}
 .block {
     backdrop-filter: blur(10px);
 }
-.block::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(20, 20, 20, 0.7);
-    pointer-events: none;
-    z-index: -1;
-    border-radius: inherit;
-}
 
 #topbar-bg-btn{
   width:32px;height:32px;border-radius:8px;border:none;background:none;

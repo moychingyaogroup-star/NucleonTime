@@ -108,7 +108,9 @@ function renderStoryView() {
 
   STORY_THEMES.forEach((theme, tIdx) => {
     const btn = document.createElement('button');
-    btn.className = 'tf-button';
+    btn.className = 'tf-btn tf-btn-secondary';
+    btn.style.marginRight = '8px';
+    btn.style.borderRadius = '20px';
     btn.textContent = theme.name;
     btn.onclick = () => renderThemeGallery(tIdx);
     themeNav.appendChild(btn);
