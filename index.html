@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>NucleonTime</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="./styles.css"/>
+<link rel="stylesheet" href="styles.css"/>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
@@ -25,7 +25,6 @@
 </head>
 <body>
 
-<!-- LOGIN SCREEN -->
 <div id="login-screen">
   <div class="login-logo">⏱</div>
   <div class="login-title">Nucleon<span>Time</span></div>
@@ -43,7 +42,6 @@
   </div>
 </div>
 
-<!-- MAIN APP -->
 <div id="app" style="display:none">
 <nav id="sidebar">
   <div class="sb-logo">
@@ -108,7 +106,6 @@
       <button class="dnav-arrow" onclick="changeDate(1)">→</button>
     </div>
 
-    <!-- TIMER WIDGET -->
     <div id="topbar-timer" style="display:flex; align-items:center; gap:8px; margin-left:auto; background:var(--card-bg); padding:4px 10px; border-radius:8px; border:1px solid var(--border);">
       <select id="timer-mode-sel" onchange="toggleTimerMode()" style="background:transparent; border:none; color:var(--text); font-size:12px; font-weight:600; outline:none; cursor:pointer;">
         <option value="pomodoro">Pomodoro (25m)</option>
@@ -124,7 +121,6 @@
     <button id="topbar-notif-btn" onclick="toggleNotif(event)">🔔<span id="topbar-notif-count" style="display:none"></span></button>
   </div>
 
-  <!-- HOME VIEW -->
   <div class="view active" id="view-home">
     <div id="schedule-wrap">
       <div id="preset-bar">
@@ -137,7 +133,6 @@
         <div id="grid-area"><div id="now-line"></div></div>
       </div>
     </div>
-    <!-- Mobile add-block fab -->
     <button id="mob-fab" onclick="showMobileAddSheet(null)">+</button>
     <div id="cat-side-panel">
       <div class="csp-head">
@@ -148,7 +143,6 @@
     </div>
   </div>
 
-  <!-- CATEGORIES VIEW -->
   <div class="view" id="view-categories">
     <div class="view-scroll"><div class="view-inner">
       <div class="view-title">Categories</div>
@@ -157,7 +151,6 @@
     </div></div>
   </div>
 
-  <!-- IMPORTANT DATES -->
   <div class="view" id="view-important-dates">
     <div class="view-scroll"><div class="view-inner">
       <div class="view-title">Important Dates</div>
@@ -166,7 +159,6 @@
     </div></div>
   </div>
 
-  <!-- ANALYTICS -->
   <div class="view" id="view-analytics">
     <div class="view-scroll"><div class="view-inner">
       <div class="view-title">Analytics</div>
@@ -175,12 +167,10 @@
     </div></div>
   </div>
 
-  <!-- FRIENDS -->
   <div class="view" id="view-friends">
     <div class="view-scroll"><div class="view-inner">
       <div class="view-title">Friends</div>
       <div class="view-sub">Your network and their streaks</div>
-      <!-- Add friend bar -->
       <div class="add-friend-bar">
         <div class="add-friend-tag-display" id="my-tag-display">Your tag: <span id="my-tag-val">…</span></div>
         <div class="add-friend-input-row">
@@ -193,7 +183,6 @@
     </div></div>
   </div>
 
-  <!-- MESSAGES -->
   <div class="view" id="view-messages">
     <div class="view-scroll"><div class="view-inner">
       <div class="view-title">Messages</div>
@@ -202,7 +191,6 @@
     </div></div>
   </div>
 
-  <!-- BUSINESS -->
   <div class="view" id="view-business">
     <div id="biz-sidebar">
       <div class="sb-head" style="font-size:12px;font-weight:600;padding:12px">
@@ -234,12 +222,10 @@
     </div>
   </div>
 
-  <!-- PROFILE -->
   <div class="view" id="view-profile">
     <div class="view-scroll"><div class="view-inner" id="profile-inner"></div></div>
   </div>
 
-  <!-- NEWS FEED -->
   <div class="view" id="view-news">
     <div class="view-scroll"><div class="view-inner">
       <div class="view-title">News Feed</div>
@@ -248,19 +234,14 @@
     </div></div>
   </div>
 
-  <!-- EMPLOYEES FINANCES -->
   <div class="view" id="view-employees">
     <div class="view-scroll"><div class="view-inner"></div></div>
   </div>
 
-  <!-- STORIES -->
   <div class="view" id="view-stories">
     <div class="view-scroll"><div class="view-inner" id="stories-inner"></div></div>
   </div>
-</div><!-- #main-wrap -->
-
-<!-- RIGHT PANEL -->
-<div id="right-panel">
+</div><div id="right-panel">
   <div class="rp-section">
 
   <div class="rp-section" style="margin-top:20px;">
@@ -286,7 +267,6 @@
   </div>
 </div>
 
-<!-- CHAT OVERLAY -->
 <div id="chat-overlay" onclick="handleChatOvClick(event)">
   <div id="chat-panel">
     <div id="chat-list-view">
@@ -317,7 +297,6 @@
   </div>
 </div>
 
-<!-- NOTIF OVERLAY -->
 <div id="notif-overlay" onclick="closeNotif()">
   <div id="notif-dd" onclick="event.stopPropagation()">
     <div class="notif-header"><span>Notifications</span><button class="notif-clear" onclick="clearNotifs()">Clear all</button></div>
@@ -325,7 +304,6 @@
   </div>
 </div>
 
-<!-- MOBILE ADD BLOCK SHEET — hidden by default, opened by JS only -->
 <div id="mob-sheet-overlay" style="display:none" onclick="closeMobileSheet()">
   <div id="mob-sheet" onclick="event.stopPropagation()">
     <div class="mob-sheet-handle"></div>
@@ -359,7 +337,6 @@
   </div>
 </div>
 
-<!-- FRIEND SCHEDULE VIEWER -->
 <div id="friend-sched-overlay" onclick="closeFriendSched()">
   <div id="friend-sched-panel" onclick="event.stopPropagation()">
     <div class="chat-header">
@@ -370,7 +347,6 @@
   </div>
 </div>
 
-<!-- MOBILE BOTTOM NAV -->
 <nav id="mobile-bottom-nav">
   <button class="mbn-item active" data-view="home"       onclick="switchView('home')">      <span class="mbn-icon">📅</span><span class="mbn-label">Schedule</span></button>
   <button class="mbn-item"        data-view="categories" onclick="switchView('categories')"><span class="mbn-icon">🗂</span><span class="mbn-label">Categories</span></button>
@@ -379,9 +355,7 @@
   <button class="mbn-item"        data-view="friends"    onclick="switchView('friends')">   <span class="mbn-icon">👥</span><span class="mbn-label">Friends</span></button>
   <button class="mbn-item"        data-view="profile"    onclick="switchView('profile')">   <span class="mbn-icon">👤</span><span class="mbn-label">Profile</span></button>
 </nav>
-</div><!-- #app -->
-
-<div id="dd-portal"></div>
+</div><div id="dd-portal"></div>
 <div id="toast"></div>
 <div id="milestone-popup">
   <div class="mp-emoji">🏆</div>
@@ -390,19 +364,18 @@
   <div class="mp-score" id="mp-score"></div>
 </div>
 
-<!-- SCRIPTS — ORDER IS CRITICAL -->
-<script src="./js/auth.js"></script>
-<script src="./js/state.js"></script>
-<script src="./js/blocks.js"></script>
-<script src="./js/categories.js"></script>
-<script src="./js/analytics.js"></script>
-<script src="./js/chat.js"></script>
-<script src="./js/business.js"></script>
-<script src="./js/points.js"></script>
-<script src="./js/currency.js"></script>
-<script src="./js/employees.js"></script>
-<script src="./js/stories.js"></script>
-<script src="./js/news.js"></script>
-<script src="./js/ui.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/state.js"></script>
+<script src="js/blocks.js"></script>
+<script src="js/categories.js"></script>
+<script src="js/analytics.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/business.js"></script>
+<script src="js/points.js"></script>
+<script src="js/currency.js"></script>
+<script src="js/employees.js"></script>
+<script src="js/stories.js"></script>
+<script src="js/news.js"></script>
+<script src="js/ui.js"></script>
 </body>
 </html>
