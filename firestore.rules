@@ -1,0 +1,90 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isUser(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    // ==========================================
+    // 1. USERS, REQUESTS & FRIENDS
+    // ==========================================
+    match /users/{userId} {
+      // Needed so users can search each other by friendTag.
+      allow read: if signedIn();
+      allow create: if isUser(userId);
+      allow update, delete: if isUser(userId);
+
+      // Accepted friends.
+      // During accept, receiver writes to their own friends list,
+      // and also writes the matching friend record into the sender's friends list.
+      match /friends/{friendId} {
+        allow read: if isUser(userId);
+        allow create, update, delete: if signedIn()
+          && (request.auth.uid == userId || request.auth.uid == friendId);
+      }
+
+      // Incoming friend requests stored at:
+      // users/{receiverUid}/friend_requests/{senderUid}
+      match /friend_requests/{requesterId} {
+        allow read: if isUser(userId);
+
+        // Sender can create a request in receiver's inbox.
+        allow create: if signedIn()
+          && request.auth.uid == requesterId
+          && request.resource.data.uid == requesterId;
+
+        // Receiver can update the request if the app later marks it accepted/rejected.
+        allow update: if isUser(userId);
+
+        // Sender can cancel, receiver can accept/reject/delete.
+        allow delete: if signedIn()
+          && (request.auth.uid == userId || request.auth.uid == requesterId);
+      }
+
+      // Outgoing friend requests stored at:
+      // users/{senderUid}/sent_friend_requests/{receiverUid}
+      match /sent_friend_requests/{targetId} {
+        allow read: if isUser(userId);
+
+        // Sender can create/update their own sent request record.
+        allow create, update: if isUser(userId)
+          && request.resource.data.uid == targetId;
+
+        // Sender can cancel, receiver can remove it after accept/reject.
+        allow delete: if signedIn()
+          && (request.auth.uid == userId || request.auth.uid == targetId);
+      }
+    }
+
+    // ==========================================
+    // 2. DAILY RECAP STORIES
+    // ==========================================
+    match /stories/{storyId} {
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && request.resource.data.uid == request.auth.uid;
+      allow update, delete: if signedIn()
+        && resource.data.uid == request.auth.uid;
+    }
+
+    // ==========================================
+    // 3. CHAT MESSAGES
+    // ==========================================
+    match /chats/{chatId}/messages/{msgId} {
+      allow read, write: if signedIn();
+    }
+
+    // ==========================================
+    // 4. SCHEDULE SHARING
+    // ==========================================
+    match /schedules/{ownerId}/days/{day} {
+      allow read: if signedIn();
+      allow write: if isUser(ownerId);
+    }
+  }
+}
