@@ -1,8 +1,7 @@
 // ── TASKS SYSTEM ─────────────────────────────────────────────────────────────
 function getTasks() {
     return gs('TASKS') || [
-        { id: 1, text: "Organize my schedule for the week", done: false },
-        { id: 2, text: "Finish math homework", done: false }
+        { id: 1, text: "Try using Task System", done: false },
     ];
 }
 
@@ -25,6 +24,7 @@ function renderTasks() {
                 <input type="checkbox" ${t.done ? 'checked disabled' : ''} style="cursor:pointer; width:18px; height:18px;" onchange="completeTask(${t.id}, event)">
                 <span style="text-decoration:${t.done ? 'line-through' : 'none'}; color:${t.done ? 'var(--muted)' : 'var(--text)'};">${escHtml(t.text)}</span>
             </div>
+            <button onclick="deleteTask(${t.id})" style="...">🗑</button>
             ${t.done ? '' : `<button onclick="deleteTask(${t.id})" style="background:none; border:none; cursor:pointer; color:#EF4444; font-size:16px;">🗑</button>`}
         `;
         taskList.appendChild(item);
