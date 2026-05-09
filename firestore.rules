@@ -1,0 +1,120 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper Functions
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isUser(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    // ==========================================
+    // 1. USERS, REQUESTS, FRIENDS & NOTIFICATIONS
+    // ==========================================
+    match /users/{userId} {
+      allow read: if signedIn();
+      allow create, update, delete: if isUser(userId);
+
+      match /friends/{friendId} {
+        allow read: if isUser(userId);
+        allow create, update, delete: if signedIn()
+          && (request.auth.uid == userId || request.auth.uid == friendId);
+      }
+
+      match /friend_requests/{requesterId} {
+        allow read: if isUser(userId);
+        allow create, update: if signedIn()
+          && request.auth.uid == requesterId;
+        allow delete: if signedIn()
+          && (request.auth.uid == userId || request.auth.uid == requesterId);
+      }
+
+      match /sent_friend_requests/{targetId} {
+        allow read: if isUser(userId);
+        allow create, update, delete: if isUser(userId);
+      }
+
+      // Real push notification device/browser tokens.
+      // Only the account owner can save, read, or remove their own tokens.
+      match /notificationTokens/{tokenId} {
+        allow read, create, update, delete: if isUser(userId);
+      }
+
+      // Important dates synced for reminder notifications.
+      // Only the account owner can save, read, or remove their own dates.
+      match /importantDates/{dateId} {
+        allow read, create, update, delete: if isUser(userId);
+      }
+
+      // ViewPoint collaboration invites received by this user.
+      match /viewpointInvites/{inviteId} {
+        allow read, update, delete: if isUser(userId);
+        allow create: if signedIn()
+          && request.resource.data.toUid == userId
+          && request.resource.data.fromUid == request.auth.uid;
+      }
+    }
+
+    // ==========================================
+    // 2. DAILY RECAP STORIES
+    // ==========================================
+    match /stories/{storyId} {
+      allow read: if signedIn();
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+      allow update, delete: if signedIn() && resource.data.uid == request.auth.uid;
+    }
+
+    // ==========================================
+    // 3. CHAT MESSAGES
+    // ==========================================
+    match /chats/{chatId}/messages/{messageId} {
+      allow read, write: if signedIn();
+    }
+
+    // ==========================================
+    // 4. VIEWPOINT SHARED SCHEDULES
+    // ==========================================
+    match /viewpoints/{viewpointId} {
+      allow create: if signedIn()
+        && request.resource.data.ownerId == request.auth.uid
+        && request.auth.uid in request.resource.data.members;
+
+      allow read: if signedIn()
+        && (request.auth.uid in resource.data.members
+          || request.auth.uid == resource.data.ownerId
+          || request.auth.uid in resource.data.pendingMembers);
+
+      // Members can edit. Pending invitees can update only to accept/leave their pending state.
+      allow update: if signedIn()
+        && (request.auth.uid in resource.data.members
+          || request.auth.uid == resource.data.ownerId
+          || request.auth.uid in resource.data.pendingMembers);
+
+      // Keep deletion disabled client-side; users leave a ViewPoint instead.
+      allow delete: if signedIn() && request.auth.uid == resource.data.ownerId;
+
+      match /days/{dayId} {
+        allow read, write: if signedIn()
+          && request.auth.uid in get(/databases/$(database)/documents/viewpoints/$(viewpointId)).data.members;
+      }
+
+      match /presence/{userId} {
+        allow read: if signedIn()
+          && request.auth.uid in get(/databases/$(database)/documents/viewpoints/$(viewpointId)).data.members;
+        allow create, update, delete: if isUser(userId)
+          && request.auth.uid in get(/databases/$(database)/documents/viewpoints/$(viewpointId)).data.members;
+      }
+    }
+
+    // ==========================================
+    // 5. SCHEDULE SHARING
+    // ==========================================
+    match /schedules/{userId}/days/{dayId} {
+      allow read: if signedIn();
+      allow write: if isUser(userId);
+    }
+  }
+}
