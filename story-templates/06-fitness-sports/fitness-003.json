@@ -1,0 +1,16 @@
+{
+  "id": "fitness-003",
+  "name": "New Personal Best",
+  "theme": "Fitness / Sports",
+  "layout": "achievement-card",
+  "textSlots": [
+    "event",
+    "oldRecord",
+    "newRecord",
+    "reaction"
+  ],
+  "imageSlots": 1,
+  "accent": "gold-purple",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

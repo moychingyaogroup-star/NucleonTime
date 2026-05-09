@@ -1,0 +1,21 @@
+{
+  "id": "poll-vote-001",
+  "name": "This or That",
+  "layout": "split-choice",
+  "textSlots": [
+    "question",
+    "optionA",
+    "optionB"
+  ],
+  "imageSlots": 2,
+  "defaultText": {
+    "question": "Choose one",
+    "optionA": "This",
+    "optionB": "That"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "cyan-purple",
+    "mood": "interactive"
+  }
+}

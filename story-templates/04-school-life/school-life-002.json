@@ -1,0 +1,21 @@
+{
+  "id": "school-life-002",
+  "name": "Test Week Mood",
+  "layout": "mood-meter",
+  "textSlots": [
+    "title",
+    "mood",
+    "caption"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "title": "Test week mood",
+    "mood": "stressed but trying",
+    "caption": "one more chapter"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "red-purple",
+    "mood": "school"
+  }
+}

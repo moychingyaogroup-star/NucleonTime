@@ -1,0 +1,15 @@
+{
+  "id": "food-002",
+  "name": "Snack Rating",
+  "theme": "Food & Drinks",
+  "layout": "rating-card",
+  "textSlots": [
+    "snackName",
+    "rating",
+    "comment"
+  ],
+  "imageSlots": 1,
+  "accent": "pink-orange",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

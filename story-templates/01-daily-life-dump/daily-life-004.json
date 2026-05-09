@@ -1,0 +1,19 @@
+{
+  "id": "daily-life-004",
+  "name": "POV My Day",
+  "layout": "large-photo-caption",
+  "textSlots": [
+    "pov",
+    "caption"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "pov": "POV: my day",
+    "caption": "describe the moment"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "purple",
+    "mood": "simple"
+  }
+}

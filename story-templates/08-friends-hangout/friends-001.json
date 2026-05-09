@@ -1,0 +1,15 @@
+{
+  "id": "friends-001",
+  "name": "With The Gang",
+  "theme": "Friends & Hangout",
+  "layout": "group-photo-card",
+  "textSlots": [
+    "title",
+    "location",
+    "caption"
+  ],
+  "imageSlots": 1,
+  "accent": "purple-blue",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

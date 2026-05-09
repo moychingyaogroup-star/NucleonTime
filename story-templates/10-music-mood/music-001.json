@@ -1,0 +1,16 @@
+{
+  "id": "music-001",
+  "name": "Song Of The Day",
+  "theme": "Music Mood",
+  "layout": "song-card",
+  "textSlots": [
+    "songTitle",
+    "artist",
+    "mood",
+    "caption"
+  ],
+  "imageSlots": 1,
+  "accent": "purple-pink",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

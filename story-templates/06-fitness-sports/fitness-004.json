@@ -1,0 +1,15 @@
+{
+  "id": "fitness-004",
+  "name": "Before Practice / After Practice",
+  "theme": "Fitness / Sports",
+  "layout": "before-after",
+  "textSlots": [
+    "beforeCaption",
+    "afterCaption",
+    "lesson"
+  ],
+  "imageSlots": 2,
+  "accent": "blue-purple",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

@@ -1,0 +1,21 @@
+{
+  "id": "poll-vote-004",
+  "name": "Guess What Happened",
+  "layout": "quiz-card",
+  "textSlots": [
+    "question",
+    "hint",
+    "answerReveal"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "question": "Guess what happened",
+    "hint": "hint:",
+    "answerReveal": "answer later"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "pink-blue",
+    "mood": "teaser"
+  }
+}

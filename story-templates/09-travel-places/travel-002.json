@@ -1,0 +1,16 @@
+{
+  "id": "travel-002",
+  "name": "Mini Trip Recap",
+  "theme": "Travel / Places",
+  "layout": "trip-timeline-3",
+  "textSlots": [
+    "start",
+    "middle",
+    "end",
+    "favoritePart"
+  ],
+  "imageSlots": 3,
+  "accent": "green-blue",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

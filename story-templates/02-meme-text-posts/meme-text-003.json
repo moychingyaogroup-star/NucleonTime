@@ -1,0 +1,19 @@
+{
+  "id": "meme-text-003",
+  "name": "Current Mood",
+  "layout": "emoji-mood-card",
+  "textSlots": [
+    "emoji",
+    "caption"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "emoji": "😭",
+    "caption": "current mood"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "orange-purple",
+    "mood": "reaction"
+  }
+}

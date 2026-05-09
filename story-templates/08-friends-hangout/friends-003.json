@@ -1,0 +1,15 @@
+{
+  "id": "friends-003",
+  "name": "Inside Joke",
+  "theme": "Friends & Hangout",
+  "layout": "quote-reaction",
+  "textSlots": [
+    "quote",
+    "reaction",
+    "context"
+  ],
+  "imageSlots": 1,
+  "accent": "yellow-purple",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

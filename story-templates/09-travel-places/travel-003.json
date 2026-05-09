@@ -1,0 +1,15 @@
+{
+  "id": "travel-003",
+  "name": "Where Am I?",
+  "theme": "Travel / Places",
+  "layout": "guess-location",
+  "textSlots": [
+    "hintOne",
+    "hintTwo",
+    "answer"
+  ],
+  "imageSlots": 1,
+  "accent": "purple-cyan",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

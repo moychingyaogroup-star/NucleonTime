@@ -1,0 +1,21 @@
+{
+  "id": "poll-vote-002",
+  "name": "Rate This",
+  "layout": "rating-card",
+  "textSlots": [
+    "title",
+    "item",
+    "scaleLabel"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Rate this",
+    "item": "thing to rate",
+    "scaleLabel": "1-10?"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "yellow-purple",
+    "mood": "interactive"
+  }
+}

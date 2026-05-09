@@ -1,0 +1,21 @@
+{
+  "id": "productivity-004",
+  "name": "What I Completed",
+  "layout": "progress-summary",
+  "textSlots": [
+    "title",
+    "completed",
+    "next"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "What I completed",
+    "completed": "done today",
+    "next": "next up"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "violet",
+    "mood": "progress"
+  }
+}

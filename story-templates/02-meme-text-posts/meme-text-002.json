@@ -1,0 +1,19 @@
+{
+  "id": "meme-text-002",
+  "name": "My Brain At 2AM",
+  "layout": "big-text-card",
+  "textSlots": [
+    "title",
+    "thought"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "title": "My brain at 2 AM",
+    "thought": "random thought goes here"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "blue-purple",
+    "mood": "late-night"
+  }
+}

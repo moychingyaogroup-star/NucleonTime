@@ -1,0 +1,15 @@
+{
+  "id": "travel-001",
+  "name": "Place Of The Day",
+  "theme": "Travel / Places",
+  "layout": "large-photo-location",
+  "textSlots": [
+    "placeName",
+    "location",
+    "caption"
+  ],
+  "imageSlots": 1,
+  "accent": "cyan-blue",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

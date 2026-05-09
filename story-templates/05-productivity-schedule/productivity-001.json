@@ -1,0 +1,23 @@
+{
+  "id": "productivity-001",
+  "name": "Today’s Plan",
+  "layout": "daily-plan",
+  "textSlots": [
+    "title",
+    "priority1",
+    "priority2",
+    "priority3"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "title": "Today’s plan",
+    "priority1": "top priority",
+    "priority2": "second priority",
+    "priority3": "third priority"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "purple-blue",
+    "mood": "focused"
+  }
+}

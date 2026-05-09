@@ -1,0 +1,16 @@
+{
+  "id": "fitness-002",
+  "name": "Workout Completed",
+  "theme": "Fitness / Sports",
+  "layout": "completion-card",
+  "textSlots": [
+    "workoutName",
+    "duration",
+    "difficulty",
+    "caption"
+  ],
+  "imageSlots": 1,
+  "accent": "green-purple",
+  "recommendedUse": "quick story post",
+  "editable": true
+}
