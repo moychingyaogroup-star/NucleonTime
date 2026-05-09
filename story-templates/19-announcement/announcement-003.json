@@ -1,0 +1,22 @@
+{
+  "id": "announcement-003",
+  "name": "New Feature",
+  "layout": "feature-launch",
+  "textSlots": [
+    "title",
+    "feature",
+    "caption"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "New feature",
+    "feature": "feature name",
+    "caption": "try it now"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "purple-cyan",
+    "mood": "launch",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

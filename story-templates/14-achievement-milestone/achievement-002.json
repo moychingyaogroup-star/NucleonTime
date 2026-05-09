@@ -1,0 +1,22 @@
+{
+  "id": "achievement-002",
+  "name": "Goal Completed",
+  "layout": "completion-badge",
+  "textSlots": [
+    "title",
+    "goal",
+    "date"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Goal completed",
+    "goal": "goal name",
+    "date": "completed today"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "emerald-cyan",
+    "mood": "proud",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

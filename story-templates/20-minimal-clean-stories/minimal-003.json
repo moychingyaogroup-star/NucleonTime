@@ -1,0 +1,24 @@
+{
+  "id": "minimal-003",
+  "name": "Clean Checklist",
+  "layout": "minimal-checklist",
+  "textSlots": [
+    "title",
+    "item1",
+    "item2",
+    "item3"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "title": "Checklist",
+    "item1": "first thing",
+    "item2": "second thing",
+    "item3": "third thing"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "white-cyan",
+    "mood": "organized",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

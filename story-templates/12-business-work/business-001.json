@@ -1,0 +1,24 @@
+{
+  "id": "business-001",
+  "name": "Today’s Sales",
+  "layout": "sales-summary",
+  "textSlots": [
+    "title",
+    "sales",
+    "orders",
+    "note"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Today’s sales",
+    "sales": "RM 0",
+    "orders": "0 orders",
+    "note": "business update"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "emerald-blue",
+    "mood": "professional",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

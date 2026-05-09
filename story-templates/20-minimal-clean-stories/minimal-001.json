@@ -1,0 +1,20 @@
+{
+  "id": "minimal-001",
+  "name": "Simple Status",
+  "layout": "plain-status-card",
+  "textSlots": [
+    "status",
+    "subtext"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "status": "simple status",
+    "subtext": "small update"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "graphite-white",
+    "mood": "minimal",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

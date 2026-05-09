@@ -1,0 +1,24 @@
+{
+  "id": "gaming-002",
+  "name": "Rank Update",
+  "layout": "rank-card",
+  "textSlots": [
+    "title",
+    "oldRank",
+    "newRank",
+    "caption"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Rank update",
+    "oldRank": "Before",
+    "newRank": "After",
+    "caption": "grind paid off"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "blue-violet",
+    "mood": "competitive",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

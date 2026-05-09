@@ -1,0 +1,24 @@
+{
+  "id": "business-003",
+  "name": "New Product / Service",
+  "layout": "launch-card",
+  "textSlots": [
+    "title",
+    "product",
+    "price",
+    "cta"
+  ],
+  "imageSlots": 2,
+  "defaultText": {
+    "title": "New drop",
+    "product": "product / service name",
+    "price": "RM",
+    "cta": "message me to order"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "violet-gold",
+    "mood": "launch",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

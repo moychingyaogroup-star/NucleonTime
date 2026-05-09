@@ -1,0 +1,22 @@
+{
+  "id": "reaction-003",
+  "name": "My Reaction When",
+  "layout": "reaction-photo-card",
+  "textSlots": [
+    "title",
+    "situation",
+    "reaction"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "My reaction when",
+    "situation": "something happens",
+    "reaction": "reaction here"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "neon-purple",
+    "mood": "expressive",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

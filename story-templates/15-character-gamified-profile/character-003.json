@@ -1,0 +1,22 @@
+{
+  "id": "character-003",
+  "name": "Points Update",
+  "layout": "points-card",
+  "textSlots": [
+    "title",
+    "points",
+    "nextGoal"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "title": "Points update",
+    "points": "0 points",
+    "nextGoal": "next unlock"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "gold-blue",
+    "mood": "progress",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

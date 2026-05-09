@@ -1,0 +1,24 @@
+{
+  "id": "finance-001",
+  "name": "Monthly Profit Update",
+  "layout": "profit-card",
+  "textSlots": [
+    "title",
+    "earnings",
+    "costs",
+    "profit"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "title": "Monthly profit update",
+    "earnings": "Earnings: RM 0",
+    "costs": "Costs: RM 0",
+    "profit": "Profit: RM 0"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "green-gold",
+    "mood": "summary",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

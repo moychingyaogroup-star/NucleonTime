@@ -1,0 +1,508 @@
+{
+  "version": 4,
+  "count": 80,
+  "folders": [
+    "01-daily-life-dump",
+    "02-meme-text-posts",
+    "03-poll-and-vote",
+    "04-school-life",
+    "05-productivity-schedule",
+    "06-fitness-sports",
+    "07-food-drinks",
+    "08-friends-hangout",
+    "09-travel-places",
+    "10-music-mood",
+    "11-gaming",
+    "12-business-work",
+    "13-finance-money-tracker",
+    "14-achievement-milestone",
+    "15-character-gamified-profile",
+    "16-aesthetic-quote",
+    "17-nostalgia-retro",
+    "18-reaction-templates",
+    "19-announcement",
+    "20-minimal-clean-stories"
+  ],
+  "templates": [
+    {
+      "folder": "01-daily-life-dump",
+      "id": "daily-life-001",
+      "name": "Today in 5 Photos",
+      "layout": "photo-grid-5"
+    },
+    {
+      "folder": "01-daily-life-dump",
+      "id": "daily-life-002",
+      "name": "Mini Day Recap",
+      "layout": "timeline-3"
+    },
+    {
+      "folder": "01-daily-life-dump",
+      "id": "daily-life-003",
+      "name": "Random Things Today",
+      "layout": "sticker-collage"
+    },
+    {
+      "folder": "01-daily-life-dump",
+      "id": "daily-life-004",
+      "name": "POV My Day",
+      "layout": "large-photo-caption"
+    },
+    {
+      "folder": "02-meme-text-posts",
+      "id": "meme-text-001",
+      "name": "Nobody Me",
+      "layout": "meme-two-line"
+    },
+    {
+      "folder": "02-meme-text-posts",
+      "id": "meme-text-002",
+      "name": "My Brain At 2AM",
+      "layout": "big-text-card"
+    },
+    {
+      "folder": "02-meme-text-posts",
+      "id": "meme-text-003",
+      "name": "Current Mood",
+      "layout": "emoji-mood-card"
+    },
+    {
+      "folder": "02-meme-text-posts",
+      "id": "meme-text-004",
+      "name": "When You Realize",
+      "layout": "headline-caption"
+    },
+    {
+      "folder": "03-poll-and-vote",
+      "id": "poll-vote-001",
+      "name": "This or That",
+      "layout": "split-choice"
+    },
+    {
+      "folder": "03-poll-and-vote",
+      "id": "poll-vote-002",
+      "name": "Rate This",
+      "layout": "rating-card"
+    },
+    {
+      "folder": "03-poll-and-vote",
+      "id": "poll-vote-003",
+      "name": "Should I",
+      "layout": "yes-no-poll"
+    },
+    {
+      "folder": "03-poll-and-vote",
+      "id": "poll-vote-004",
+      "name": "Guess What Happened",
+      "layout": "quiz-card"
+    },
+    {
+      "folder": "04-school-life",
+      "id": "school-life-001",
+      "name": "Homework Survival",
+      "layout": "checklist-card"
+    },
+    {
+      "folder": "04-school-life",
+      "id": "school-life-002",
+      "name": "Test Week Mood",
+      "layout": "mood-meter"
+    },
+    {
+      "folder": "04-school-life",
+      "id": "school-life-003",
+      "name": "Before After Class",
+      "layout": "before-after"
+    },
+    {
+      "folder": "04-school-life",
+      "id": "school-life-004",
+      "name": "Group Project Experience",
+      "layout": "quote-and-reaction"
+    },
+    {
+      "folder": "05-productivity-schedule",
+      "id": "productivity-001",
+      "name": "Today’s Plan",
+      "layout": "daily-plan"
+    },
+    {
+      "folder": "05-productivity-schedule",
+      "id": "productivity-002",
+      "name": "To-Do Checklist",
+      "layout": "checklist-card"
+    },
+    {
+      "folder": "05-productivity-schedule",
+      "id": "productivity-003",
+      "name": "Study Timer Update",
+      "layout": "timer-progress"
+    },
+    {
+      "folder": "05-productivity-schedule",
+      "id": "productivity-004",
+      "name": "What I Completed",
+      "layout": "progress-summary"
+    },
+    {
+      "folder": "06-fitness-sports",
+      "id": "fitness-001",
+      "name": "Training Day Recap",
+      "layout": "training-recap"
+    },
+    {
+      "folder": "06-fitness-sports",
+      "id": "fitness-002",
+      "name": "Workout Completed",
+      "layout": "completion-card"
+    },
+    {
+      "folder": "06-fitness-sports",
+      "id": "fitness-003",
+      "name": "New Personal Best",
+      "layout": "achievement-card"
+    },
+    {
+      "folder": "06-fitness-sports",
+      "id": "fitness-004",
+      "name": "Before Practice / After Practice",
+      "layout": "before-after"
+    },
+    {
+      "folder": "07-food-drinks",
+      "id": "food-001",
+      "name": "What I Ate Today",
+      "layout": "food-dump-4"
+    },
+    {
+      "folder": "07-food-drinks",
+      "id": "food-002",
+      "name": "Snack Rating",
+      "layout": "rating-card"
+    },
+    {
+      "folder": "07-food-drinks",
+      "id": "food-003",
+      "name": "Cafe Run",
+      "layout": "location-card"
+    },
+    {
+      "folder": "07-food-drinks",
+      "id": "food-004",
+      "name": "Would You Try This?",
+      "layout": "poll-food-card"
+    },
+    {
+      "folder": "08-friends-hangout",
+      "id": "friends-001",
+      "name": "With The Gang",
+      "layout": "group-photo-card"
+    },
+    {
+      "folder": "08-friends-hangout",
+      "id": "friends-002",
+      "name": "Best Moment Today",
+      "layout": "moment-highlight"
+    },
+    {
+      "folder": "08-friends-hangout",
+      "id": "friends-003",
+      "name": "Inside Joke",
+      "layout": "quote-reaction"
+    },
+    {
+      "folder": "08-friends-hangout",
+      "id": "friends-004",
+      "name": "Friend Photo Dump",
+      "layout": "photo-grid-4"
+    },
+    {
+      "folder": "09-travel-places",
+      "id": "travel-001",
+      "name": "Place Of The Day",
+      "layout": "large-photo-location"
+    },
+    {
+      "folder": "09-travel-places",
+      "id": "travel-002",
+      "name": "Mini Trip Recap",
+      "layout": "trip-timeline-3"
+    },
+    {
+      "folder": "09-travel-places",
+      "id": "travel-003",
+      "name": "Where Am I?",
+      "layout": "guess-location"
+    },
+    {
+      "folder": "09-travel-places",
+      "id": "travel-004",
+      "name": "Weekend Location",
+      "layout": "weekend-card"
+    },
+    {
+      "folder": "10-music-mood",
+      "id": "music-001",
+      "name": "Song Of The Day",
+      "layout": "song-card"
+    },
+    {
+      "folder": "10-music-mood",
+      "id": "music-002",
+      "name": "Current Playlist",
+      "layout": "playlist-list"
+    },
+    {
+      "folder": "10-music-mood",
+      "id": "music-003",
+      "name": "This Song = This Mood",
+      "layout": "mood-match"
+    },
+    {
+      "folder": "10-music-mood",
+      "id": "music-004",
+      "name": "Top 3 Songs Today",
+      "layout": "top-three-list"
+    },
+    {
+      "folder": "11-gaming",
+      "id": "gaming-001",
+      "name": "Game Night Recap",
+      "layout": "game-night-recap"
+    },
+    {
+      "folder": "11-gaming",
+      "id": "gaming-002",
+      "name": "Rank Update",
+      "layout": "rank-card"
+    },
+    {
+      "folder": "11-gaming",
+      "id": "gaming-003",
+      "name": "Best Clip",
+      "layout": "clip-highlight"
+    },
+    {
+      "folder": "11-gaming",
+      "id": "gaming-004",
+      "name": "Rage Quit Moment",
+      "layout": "meme-reaction-card"
+    },
+    {
+      "folder": "12-business-work",
+      "id": "business-001",
+      "name": "Today’s Sales",
+      "layout": "sales-summary"
+    },
+    {
+      "folder": "12-business-work",
+      "id": "business-002",
+      "name": "Behind The Scenes",
+      "layout": "behind-scenes"
+    },
+    {
+      "folder": "12-business-work",
+      "id": "business-003",
+      "name": "New Product / Service",
+      "layout": "launch-card"
+    },
+    {
+      "folder": "12-business-work",
+      "id": "business-004",
+      "name": "Customer Highlight",
+      "layout": "testimonial-card"
+    },
+    {
+      "folder": "13-finance-money-tracker",
+      "id": "finance-001",
+      "name": "Monthly Profit Update",
+      "layout": "profit-card"
+    },
+    {
+      "folder": "13-finance-money-tracker",
+      "id": "finance-002",
+      "name": "Spending Check",
+      "layout": "spending-check"
+    },
+    {
+      "folder": "13-finance-money-tracker",
+      "id": "finance-003",
+      "name": "Savings Goal",
+      "layout": "goal-progress"
+    },
+    {
+      "folder": "13-finance-money-tracker",
+      "id": "finance-004",
+      "name": "Best Earning Month",
+      "layout": "highlight-stat"
+    },
+    {
+      "folder": "14-achievement-milestone",
+      "id": "achievement-001",
+      "name": "Level Up",
+      "layout": "level-up-card"
+    },
+    {
+      "folder": "14-achievement-milestone",
+      "id": "achievement-002",
+      "name": "Goal Completed",
+      "layout": "completion-badge"
+    },
+    {
+      "folder": "14-achievement-milestone",
+      "id": "achievement-003",
+      "name": "New Record",
+      "layout": "record-card"
+    },
+    {
+      "folder": "14-achievement-milestone",
+      "id": "achievement-004",
+      "name": "Progress Update",
+      "layout": "progress-summary"
+    },
+    {
+      "folder": "15-character-gamified-profile",
+      "id": "character-001",
+      "name": "Character Unlocked",
+      "layout": "unlock-card"
+    },
+    {
+      "folder": "15-character-gamified-profile",
+      "id": "character-002",
+      "name": "Current Character",
+      "layout": "profile-card"
+    },
+    {
+      "folder": "15-character-gamified-profile",
+      "id": "character-003",
+      "name": "Points Update",
+      "layout": "points-card"
+    },
+    {
+      "folder": "15-character-gamified-profile",
+      "id": "character-004",
+      "name": "Streak Update",
+      "layout": "streak-card"
+    },
+    {
+      "folder": "16-aesthetic-quote",
+      "id": "aesthetic-001",
+      "name": "Soft Reminder",
+      "layout": "minimal-quote-card"
+    },
+    {
+      "folder": "16-aesthetic-quote",
+      "id": "aesthetic-002",
+      "name": "Late Night Thought",
+      "layout": "blurred-photo-quote"
+    },
+    {
+      "folder": "16-aesthetic-quote",
+      "id": "aesthetic-003",
+      "name": "One Sentence Mood",
+      "layout": "single-line-mood"
+    },
+    {
+      "folder": "16-aesthetic-quote",
+      "id": "aesthetic-004",
+      "name": "Quote Of The Day",
+      "layout": "quote-frame"
+    },
+    {
+      "folder": "17-nostalgia-retro",
+      "id": "nostalgia-001",
+      "name": "Memory Unlocked",
+      "layout": "retro-memory-card"
+    },
+    {
+      "folder": "17-nostalgia-retro",
+      "id": "nostalgia-002",
+      "name": "Before vs Now",
+      "layout": "retro-before-after"
+    },
+    {
+      "folder": "17-nostalgia-retro",
+      "id": "nostalgia-003",
+      "name": "Old Photo New Feeling",
+      "layout": "polaroid-card"
+    },
+    {
+      "folder": "17-nostalgia-retro",
+      "id": "nostalgia-004",
+      "name": "Throwback Mood",
+      "layout": "vhs-caption-card"
+    },
+    {
+      "folder": "18-reaction-templates",
+      "id": "reaction-001",
+      "name": "Expectation vs Reality",
+      "layout": "split-reaction"
+    },
+    {
+      "folder": "18-reaction-templates",
+      "id": "reaction-002",
+      "name": "Me vs Also Me",
+      "layout": "dual-mood-card"
+    },
+    {
+      "folder": "18-reaction-templates",
+      "id": "reaction-003",
+      "name": "My Reaction When",
+      "layout": "reaction-photo-card"
+    },
+    {
+      "folder": "18-reaction-templates",
+      "id": "reaction-004",
+      "name": "How It Started / Going",
+      "layout": "progress-meme-split"
+    },
+    {
+      "folder": "19-announcement",
+      "id": "announcement-001",
+      "name": "Important Update",
+      "layout": "clean-announcement"
+    },
+    {
+      "folder": "19-announcement",
+      "id": "announcement-002",
+      "name": "Coming Soon",
+      "layout": "teaser-card"
+    },
+    {
+      "folder": "19-announcement",
+      "id": "announcement-003",
+      "name": "New Feature",
+      "layout": "feature-launch"
+    },
+    {
+      "folder": "19-announcement",
+      "id": "announcement-004",
+      "name": "Save The Date",
+      "layout": "date-card"
+    },
+    {
+      "folder": "20-minimal-clean-stories",
+      "id": "minimal-001",
+      "name": "Simple Status",
+      "layout": "plain-status-card"
+    },
+    {
+      "folder": "20-minimal-clean-stories",
+      "id": "minimal-002",
+      "name": "One Photo One Caption",
+      "layout": "photo-caption-minimal"
+    },
+    {
+      "folder": "20-minimal-clean-stories",
+      "id": "minimal-003",
+      "name": "Clean Checklist",
+      "layout": "minimal-checklist"
+    },
+    {
+      "folder": "20-minimal-clean-stories",
+      "id": "minimal-004",
+      "name": "Plain Mood Card",
+      "layout": "soft-mood-card"
+    }
+  ]
+}

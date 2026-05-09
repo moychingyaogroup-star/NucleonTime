@@ -1,0 +1,22 @@
+{
+  "id": "announcement-001",
+  "name": "Important Update",
+  "layout": "clean-announcement",
+  "textSlots": [
+    "title",
+    "details",
+    "date"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "title": "Important update",
+    "details": "what people need to know",
+    "date": "date / time"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "royal-blue",
+    "mood": "official",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

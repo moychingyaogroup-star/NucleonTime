@@ -1,0 +1,22 @@
+{
+  "id": "character-002",
+  "name": "Current Character",
+  "layout": "profile-card",
+  "textSlots": [
+    "title",
+    "character",
+    "bonus"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Current character",
+    "character": "character name",
+    "bonus": "bonus info"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "purple-blue",
+    "mood": "profile",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

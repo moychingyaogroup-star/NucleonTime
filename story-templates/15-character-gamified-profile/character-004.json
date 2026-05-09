@@ -1,0 +1,22 @@
+{
+  "id": "character-004",
+  "name": "Streak Update",
+  "layout": "streak-card",
+  "textSlots": [
+    "title",
+    "streak",
+    "caption"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "title": "Streak update",
+    "streak": "0 days",
+    "caption": "keep it going"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "orange-red",
+    "mood": "energy",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

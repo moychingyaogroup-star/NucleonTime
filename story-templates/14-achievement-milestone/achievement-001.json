@@ -1,0 +1,22 @@
+{
+  "id": "achievement-001",
+  "name": "Level Up",
+  "layout": "level-up-card",
+  "textSlots": [
+    "title",
+    "level",
+    "caption"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Level up",
+    "level": "Level 2",
+    "caption": "small progress still counts"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "purple-gold",
+    "mood": "celebration",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

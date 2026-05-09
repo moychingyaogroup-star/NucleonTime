@@ -1,0 +1,22 @@
+{
+  "id": "character-001",
+  "name": "Character Unlocked",
+  "layout": "unlock-card",
+  "textSlots": [
+    "title",
+    "character",
+    "caption"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Character unlocked",
+    "character": "character name",
+    "caption": "new look activated"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "violet-cyan",
+    "mood": "game",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

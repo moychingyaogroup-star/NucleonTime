@@ -1,0 +1,22 @@
+{
+  "id": "achievement-003",
+  "name": "New Record",
+  "layout": "record-card",
+  "textSlots": [
+    "title",
+    "record",
+    "caption"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "New record",
+    "record": "record here",
+    "caption": "personal best"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "orange-purple",
+    "mood": "bold",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

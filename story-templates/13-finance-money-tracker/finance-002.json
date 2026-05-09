@@ -1,0 +1,24 @@
+{
+  "id": "finance-002",
+  "name": "Spending Check",
+  "layout": "spending-check",
+  "textSlots": [
+    "title",
+    "spent",
+    "saved",
+    "note"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "title": "Spending check",
+    "spent": "Spent: RM 0",
+    "saved": "Saved: RM 0",
+    "note": "keeping it simple"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "red-blue",
+    "mood": "practical",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

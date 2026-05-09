@@ -1,0 +1,22 @@
+{
+  "id": "nostalgia-001",
+  "name": "Memory Unlocked",
+  "layout": "retro-memory-card",
+  "textSlots": [
+    "title",
+    "memory",
+    "caption"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Memory unlocked",
+    "memory": "old moment",
+    "caption": "still feels special"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "sunset-orange",
+    "mood": "retro",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}
