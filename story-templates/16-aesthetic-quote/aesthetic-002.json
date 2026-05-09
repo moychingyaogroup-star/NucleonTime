@@ -1,0 +1,20 @@
+{
+  "id": "aesthetic-002",
+  "name": "Late Night Thought",
+  "layout": "blurred-photo-quote",
+  "textSlots": [
+    "thought",
+    "time"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "thought": "late night thought",
+    "time": "2:00 AM"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "midnight-blue",
+    "mood": "dreamy",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

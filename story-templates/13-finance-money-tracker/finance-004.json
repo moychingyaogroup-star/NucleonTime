@@ -1,0 +1,24 @@
+{
+  "id": "finance-004",
+  "name": "Best Earning Month",
+  "layout": "highlight-stat",
+  "textSlots": [
+    "title",
+    "month",
+    "amount",
+    "note"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Best earning month",
+    "month": "Month",
+    "amount": "RM 0",
+    "note": "new record"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "gold-purple",
+    "mood": "achievement",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

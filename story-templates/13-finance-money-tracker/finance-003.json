@@ -1,0 +1,24 @@
+{
+  "id": "finance-003",
+  "name": "Savings Goal",
+  "layout": "goal-progress",
+  "textSlots": [
+    "title",
+    "current",
+    "target",
+    "caption"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Savings goal",
+    "current": "RM 0 saved",
+    "target": "Goal: RM 0",
+    "caption": "progress update"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "blue-cyan",
+    "mood": "motivated",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

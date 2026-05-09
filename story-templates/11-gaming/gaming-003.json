@@ -1,0 +1,22 @@
+{
+  "id": "gaming-003",
+  "name": "Best Clip",
+  "layout": "clip-highlight",
+  "textSlots": [
+    "title",
+    "clipCaption",
+    "reaction"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Best clip",
+    "clipCaption": "what happened here",
+    "reaction": "my reaction"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "electric-purple",
+    "mood": "cinematic",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

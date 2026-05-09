@@ -1,0 +1,24 @@
+{
+  "id": "gaming-001",
+  "name": "Game Night Recap",
+  "layout": "game-night-recap",
+  "textSlots": [
+    "title",
+    "game",
+    "result",
+    "highlight"
+  ],
+  "imageSlots": 2,
+  "defaultText": {
+    "title": "Game night",
+    "game": "game played",
+    "result": "win / loss / chaos",
+    "highlight": "best moment"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "neon-green",
+    "mood": "hype",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

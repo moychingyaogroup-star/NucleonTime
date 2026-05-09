@@ -1,0 +1,22 @@
+{
+  "id": "reaction-001",
+  "name": "Expectation vs Reality",
+  "layout": "split-reaction",
+  "textSlots": [
+    "expectation",
+    "reality",
+    "caption"
+  ],
+  "imageSlots": 2,
+  "defaultText": {
+    "expectation": "Expectation",
+    "reality": "Reality",
+    "caption": "why is it always like this"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "pink-purple",
+    "mood": "funny",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

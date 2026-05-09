@@ -1,0 +1,22 @@
+{
+  "id": "announcement-004",
+  "name": "Save The Date",
+  "layout": "date-card",
+  "textSlots": [
+    "title",
+    "date",
+    "location"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Save the date",
+    "date": "date here",
+    "location": "location / online"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "emerald-gold",
+    "mood": "event",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

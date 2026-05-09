@@ -1,0 +1,22 @@
+{
+  "id": "business-004",
+  "name": "Customer Highlight",
+  "layout": "testimonial-card",
+  "textSlots": [
+    "title",
+    "customerQuote",
+    "caption"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Customer highlight",
+    "customerQuote": "“feedback here”",
+    "caption": "thank you for the support"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "cyan-emerald",
+    "mood": "trust",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

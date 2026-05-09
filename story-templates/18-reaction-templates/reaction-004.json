@@ -1,0 +1,22 @@
+{
+  "id": "reaction-004",
+  "name": "How It Started / Going",
+  "layout": "progress-meme-split",
+  "textSlots": [
+    "started",
+    "going",
+    "caption"
+  ],
+  "imageSlots": 2,
+  "defaultText": {
+    "started": "How it started",
+    "going": "How it’s going",
+    "caption": "character development"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "cyan-violet",
+    "mood": "trendy",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

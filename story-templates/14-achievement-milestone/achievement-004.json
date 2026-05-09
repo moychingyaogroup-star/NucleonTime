@@ -1,0 +1,24 @@
+{
+  "id": "achievement-004",
+  "name": "Progress Update",
+  "layout": "progress-summary",
+  "textSlots": [
+    "title",
+    "before",
+    "after",
+    "note"
+  ],
+  "imageSlots": 2,
+  "defaultText": {
+    "title": "Progress update",
+    "before": "Before",
+    "after": "After",
+    "note": "getting better"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "blue-violet",
+    "mood": "focused",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

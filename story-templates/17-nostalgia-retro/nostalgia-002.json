@@ -1,0 +1,22 @@
+{
+  "id": "nostalgia-002",
+  "name": "Before vs Now",
+  "layout": "retro-before-after",
+  "textSlots": [
+    "before",
+    "now",
+    "caption"
+  ],
+  "imageSlots": 2,
+  "defaultText": {
+    "before": "Before",
+    "now": "Now",
+    "caption": "look how far"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "teal-orange",
+    "mood": "nostalgic",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

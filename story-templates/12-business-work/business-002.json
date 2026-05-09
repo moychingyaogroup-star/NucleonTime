@@ -1,0 +1,24 @@
+{
+  "id": "business-002",
+  "name": "Behind The Scenes",
+  "layout": "behind-scenes",
+  "textSlots": [
+    "title",
+    "caption",
+    "step1",
+    "step2"
+  ],
+  "imageSlots": 3,
+  "defaultText": {
+    "title": "Behind the scenes",
+    "caption": "what I worked on",
+    "step1": "Step 1",
+    "step2": "Step 2"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "gold-blue",
+    "mood": "clean",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

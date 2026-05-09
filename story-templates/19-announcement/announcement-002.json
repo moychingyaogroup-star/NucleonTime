@@ -1,0 +1,22 @@
+{
+  "id": "announcement-002",
+  "name": "Coming Soon",
+  "layout": "teaser-card",
+  "textSlots": [
+    "title",
+    "teaser",
+    "cta"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Coming soon",
+    "teaser": "something is dropping",
+    "cta": "stay tuned"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "black-gold",
+    "mood": "premium",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

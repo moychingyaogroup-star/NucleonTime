@@ -1,0 +1,22 @@
+{
+  "id": "nostalgia-004",
+  "name": "Throwback Mood",
+  "layout": "vhs-caption-card",
+  "textSlots": [
+    "title",
+    "caption",
+    "tag"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Throwback",
+    "caption": "take me back to this",
+    "tag": "#memory"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "retro-purple",
+    "mood": "vintage",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

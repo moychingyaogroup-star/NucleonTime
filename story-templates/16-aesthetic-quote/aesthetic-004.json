@@ -1,0 +1,22 @@
+{
+  "id": "aesthetic-004",
+  "name": "Quote Of The Day",
+  "layout": "quote-frame",
+  "textSlots": [
+    "title",
+    "quote",
+    "author"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Quote of the day",
+    "quote": "write your quote here",
+    "author": "— me"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "cream-gold",
+    "mood": "clean",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

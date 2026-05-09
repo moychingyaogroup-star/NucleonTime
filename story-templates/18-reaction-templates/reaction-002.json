@@ -1,0 +1,22 @@
+{
+  "id": "reaction-002",
+  "name": "Me vs Also Me",
+  "layout": "dual-mood-card",
+  "textSlots": [
+    "me",
+    "alsoMe",
+    "caption"
+  ],
+  "imageSlots": 2,
+  "defaultText": {
+    "me": "Me",
+    "alsoMe": "Also me",
+    "caption": "both are true"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "blue-pink",
+    "mood": "relatable",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

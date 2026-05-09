@@ -1,0 +1,22 @@
+{
+  "id": "nostalgia-003",
+  "name": "Old Photo New Feeling",
+  "layout": "polaroid-card",
+  "textSlots": [
+    "title",
+    "date",
+    "caption"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "title": "Old photo, new feeling",
+    "date": "date / year",
+    "caption": "story behind it"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "film-brown",
+    "mood": "warm",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

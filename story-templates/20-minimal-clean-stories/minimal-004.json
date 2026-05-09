@@ -1,0 +1,22 @@
+{
+  "id": "minimal-004",
+  "name": "Plain Mood Card",
+  "layout": "soft-mood-card",
+  "textSlots": [
+    "mood",
+    "emoji",
+    "caption"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "mood": "Mood",
+    "emoji": "☁️",
+    "caption": "quiet update"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "charcoal-lavender",
+    "mood": "soft",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "aesthetic-001",
+  "name": "Soft Reminder",
+  "layout": "minimal-quote-card",
+  "textSlots": [
+    "quote",
+    "caption"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "quote": "slow progress is still progress",
+    "caption": "note to self"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "moonlit-lavender",
+    "mood": "soft",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}

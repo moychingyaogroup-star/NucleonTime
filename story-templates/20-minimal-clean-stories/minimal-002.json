@@ -1,0 +1,20 @@
+{
+  "id": "minimal-002",
+  "name": "One Photo One Caption",
+  "layout": "photo-caption-minimal",
+  "textSlots": [
+    "caption",
+    "date"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "caption": "one photo, one caption",
+    "date": "today"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "silver-blue",
+    "mood": "clean",
+    "aesthetic": "soft gradients, rounded glass cards, subtle glow, clean readable spacing"
+  }
+}
