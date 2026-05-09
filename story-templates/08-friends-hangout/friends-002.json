@@ -1,0 +1,15 @@
+{
+  "id": "friends-002",
+  "name": "Best Moment Today",
+  "theme": "Friends & Hangout",
+  "layout": "moment-highlight",
+  "textSlots": [
+    "moment",
+    "whoWasThere",
+    "caption"
+  ],
+  "imageSlots": 2,
+  "accent": "pink-purple",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

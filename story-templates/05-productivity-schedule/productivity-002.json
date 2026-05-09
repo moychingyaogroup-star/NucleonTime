@@ -1,0 +1,25 @@
+{
+  "id": "productivity-002",
+  "name": "To-Do Checklist",
+  "layout": "checklist-card",
+  "textSlots": [
+    "title",
+    "task1",
+    "task2",
+    "task3",
+    "task4"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "title": "To-do list",
+    "task1": "task 1",
+    "task2": "task 2",
+    "task3": "task 3",
+    "task4": "task 4"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "cyan-purple",
+    "mood": "organized"
+  }
+}

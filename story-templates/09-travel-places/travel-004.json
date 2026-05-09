@@ -1,0 +1,16 @@
+{
+  "id": "travel-004",
+  "name": "Weekend Location",
+  "theme": "Travel / Places",
+  "layout": "weekend-card",
+  "textSlots": [
+    "placeName",
+    "vibe",
+    "rating",
+    "caption"
+  ],
+  "imageSlots": 2,
+  "accent": "orange-purple",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

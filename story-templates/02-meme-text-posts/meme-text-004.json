@@ -1,0 +1,19 @@
+{
+  "id": "meme-text-004",
+  "name": "When You Realize",
+  "layout": "headline-caption",
+  "textSlots": [
+    "headline",
+    "caption"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "headline": "When you realize...",
+    "caption": "add the situation"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "red-purple",
+    "mood": "funny"
+  }
+}

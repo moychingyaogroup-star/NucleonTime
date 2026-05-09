@@ -1,0 +1,16 @@
+{
+  "id": "food-004",
+  "name": "Would You Try This?",
+  "theme": "Food & Drinks",
+  "layout": "poll-food-card",
+  "textSlots": [
+    "foodName",
+    "question",
+    "optionA",
+    "optionB"
+  ],
+  "imageSlots": 1,
+  "accent": "green-orange",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

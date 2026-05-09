@@ -1,0 +1,16 @@
+{
+  "id": "music-003",
+  "name": "This Song = This Mood",
+  "theme": "Music Mood",
+  "layout": "mood-match",
+  "textSlots": [
+    "songTitle",
+    "mood",
+    "emoji",
+    "reason"
+  ],
+  "imageSlots": 1,
+  "accent": "pink-orange",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

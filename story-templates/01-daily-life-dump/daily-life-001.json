@@ -1,0 +1,19 @@
+{
+  "id": "daily-life-001",
+  "name": "Today in 5 Photos",
+  "layout": "photo-grid-5",
+  "textSlots": [
+    "title",
+    "caption"
+  ],
+  "imageSlots": 5,
+  "defaultText": {
+    "title": "Today in 5 photos",
+    "caption": "little moments from my day"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "purple-blue",
+    "mood": "casual"
+  }
+}

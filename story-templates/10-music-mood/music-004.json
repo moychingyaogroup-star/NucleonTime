@@ -1,0 +1,16 @@
+{
+  "id": "music-004",
+  "name": "Top 3 Songs Today",
+  "theme": "Music Mood",
+  "layout": "top-three-list",
+  "textSlots": [
+    "songOne",
+    "songTwo",
+    "songThree",
+    "caption"
+  ],
+  "imageSlots": 0,
+  "accent": "green-purple",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

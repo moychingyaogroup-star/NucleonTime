@@ -1,0 +1,23 @@
+{
+  "id": "daily-life-003",
+  "name": "Random Things Today",
+  "layout": "sticker-collage",
+  "textSlots": [
+    "title",
+    "note1",
+    "note2",
+    "note3"
+  ],
+  "imageSlots": 4,
+  "defaultText": {
+    "title": "Random things today",
+    "note1": "small win",
+    "note2": "funny moment",
+    "note3": "current mood"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "violet",
+    "mood": "playful"
+  }
+}

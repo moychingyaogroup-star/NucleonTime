@@ -1,0 +1,19 @@
+{
+  "id": "school-life-004",
+  "name": "Group Project Experience",
+  "layout": "quote-and-reaction",
+  "textSlots": [
+    "quote",
+    "reaction"
+  ],
+  "imageSlots": 1,
+  "defaultText": {
+    "quote": "Group project update:",
+    "reaction": "my reaction"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "orange-purple",
+    "mood": "relatable"
+  }
+}

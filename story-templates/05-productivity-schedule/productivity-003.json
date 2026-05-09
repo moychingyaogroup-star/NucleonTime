@@ -1,0 +1,21 @@
+{
+  "id": "productivity-003",
+  "name": "Study Timer Update",
+  "layout": "timer-progress",
+  "textSlots": [
+    "title",
+    "minutes",
+    "status"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "title": "Study timer",
+    "minutes": "25 min",
+    "status": "completed"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "green-purple",
+    "mood": "productive"
+  }
+}

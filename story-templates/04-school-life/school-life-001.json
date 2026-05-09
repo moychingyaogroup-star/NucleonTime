@@ -1,0 +1,23 @@
+{
+  "id": "school-life-001",
+  "name": "Homework Survival",
+  "layout": "checklist-card",
+  "textSlots": [
+    "title",
+    "task1",
+    "task2",
+    "task3"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "title": "Homework survival",
+    "task1": "finish this",
+    "task2": "study that",
+    "task3": "sleep maybe"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "purple",
+    "mood": "student"
+  }
+}

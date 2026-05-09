@@ -1,0 +1,17 @@
+{
+  "id": "food-001",
+  "name": "What I Ate Today",
+  "theme": "Food & Drinks",
+  "layout": "food-dump-4",
+  "textSlots": [
+    "title",
+    "breakfast",
+    "lunch",
+    "dinner",
+    "favorite"
+  ],
+  "imageSlots": 4,
+  "accent": "orange-yellow",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

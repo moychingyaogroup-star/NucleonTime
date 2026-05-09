@@ -1,0 +1,16 @@
+{
+  "id": "food-003",
+  "name": "Cafe Run",
+  "theme": "Food & Drinks",
+  "layout": "location-card",
+  "textSlots": [
+    "cafeName",
+    "order",
+    "price",
+    "vibe"
+  ],
+  "imageSlots": 2,
+  "accent": "brown-gold",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

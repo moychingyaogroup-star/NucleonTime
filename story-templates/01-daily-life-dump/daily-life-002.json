@@ -1,0 +1,21 @@
+{
+  "id": "daily-life-002",
+  "name": "Mini Day Recap",
+  "layout": "timeline-3",
+  "textSlots": [
+    "morning",
+    "afternoon",
+    "night"
+  ],
+  "imageSlots": 3,
+  "defaultText": {
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "night": "Night"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "cyan-purple",
+    "mood": "recap"
+  }
+}

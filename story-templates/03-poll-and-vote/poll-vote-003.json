@@ -1,0 +1,21 @@
+{
+  "id": "poll-vote-003",
+  "name": "Should I",
+  "layout": "yes-no-poll",
+  "textSlots": [
+    "question",
+    "yesLabel",
+    "noLabel"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "question": "Should I...",
+    "yesLabel": "Yes",
+    "noLabel": "No"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "green-purple",
+    "mood": "decision"
+  }
+}

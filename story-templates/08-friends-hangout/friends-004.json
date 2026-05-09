@@ -1,0 +1,15 @@
+{
+  "id": "friends-004",
+  "name": "Friend Photo Dump",
+  "theme": "Friends & Hangout",
+  "layout": "photo-grid-4",
+  "textSlots": [
+    "title",
+    "caption",
+    "tagline"
+  ],
+  "imageSlots": 4,
+  "accent": "blue-cyan",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

@@ -1,0 +1,19 @@
+{
+  "id": "meme-text-001",
+  "name": "Nobody Me",
+  "layout": "meme-two-line",
+  "textSlots": [
+    "setup",
+    "punchline"
+  ],
+  "imageSlots": 0,
+  "defaultText": {
+    "setup": "Nobody:",
+    "punchline": "Me:"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "hot-pink",
+    "mood": "meme"
+  }
+}

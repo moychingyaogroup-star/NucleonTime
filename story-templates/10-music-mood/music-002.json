@@ -1,0 +1,17 @@
+{
+  "id": "music-002",
+  "name": "Current Playlist",
+  "theme": "Music Mood",
+  "layout": "playlist-list",
+  "textSlots": [
+    "playlistName",
+    "trackOne",
+    "trackTwo",
+    "trackThree",
+    "vibe"
+  ],
+  "imageSlots": 1,
+  "accent": "blue-purple",
+  "recommendedUse": "quick story post",
+  "editable": true
+}

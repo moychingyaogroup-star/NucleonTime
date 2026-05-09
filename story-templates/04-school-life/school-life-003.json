@@ -1,0 +1,19 @@
+{
+  "id": "school-life-003",
+  "name": "Before After Class",
+  "layout": "before-after",
+  "textSlots": [
+    "before",
+    "after"
+  ],
+  "imageSlots": 2,
+  "defaultText": {
+    "before": "Before class",
+    "after": "After class"
+  },
+  "style": {
+    "theme": "dark-glass",
+    "accent": "blue-purple",
+    "mood": "funny"
+  }
+}

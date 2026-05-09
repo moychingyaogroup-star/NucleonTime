@@ -1,0 +1,16 @@
+{
+  "id": "fitness-001",
+  "name": "Training Day Recap",
+  "theme": "Fitness / Sports",
+  "layout": "training-recap",
+  "textSlots": [
+    "title",
+    "sport",
+    "mainWorkout",
+    "caption"
+  ],
+  "imageSlots": 2,
+  "accent": "purple-orange",
+  "recommendedUse": "quick story post",
+  "editable": true
+}
